@@ -1,13 +1,13 @@
 import time
 
 from importlib import import_module
-from graphite import settings
+from graphitequery import settings
 
-from graphite.util import is_local_interface, is_pattern
-from graphite.remote_storage import RemoteStore
-from graphite.node import LeafNode
-from graphite.intervals import Interval, IntervalSet
-from graphite.readers import MultiReader
+from graphitequery.util import is_local_interface, is_pattern
+from graphitequery.remote_storage import RemoteStore
+from graphitequery.node import LeafNode
+from graphitequery.intervals import Interval, IntervalSet
+from graphitequery.readers import MultiReader
 
 
 def get_finder(finder_path):

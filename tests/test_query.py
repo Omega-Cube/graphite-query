@@ -6,8 +6,8 @@ from __setup import TestCase
 
 import time
 import whisper
-from graphite import settings
-from graphite import query
+from graphitequery import settings
+from graphitequery import query
 from pprint import pprint
 
 class QueryTest(TestCase):

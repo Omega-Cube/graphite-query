@@ -1,11 +1,11 @@
 import os
 import time
 # TO-DO remove unused import
-from graphite.node import LeafNode, BranchNode
-from graphite.intervals import Interval, IntervalSet
-from graphite.carbonlink import CarbonLink
-from graphite.logger import log
-from graphite import settings
+from graphitequery.node import LeafNode, BranchNode
+from graphitequery.intervals import Interval, IntervalSet
+from graphitequery.carbonlink import CarbonLink
+from graphitequery.logger import log
+from graphitequery import settings
 
 try:
     import whisper

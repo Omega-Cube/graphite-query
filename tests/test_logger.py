@@ -1,5 +1,5 @@
 import logging
-from graphite.logger import log
+from graphitequery.logger import log
 
 from __setup import TestCase
 

@@ -4,9 +4,9 @@ import os.path
 
 from glob import glob
 from ceres import CeresTree, CeresNode
-from graphite import settings
-from graphite.node import BranchNode, LeafNode
-from graphite.readers import CeresReader
+from graphitequery import settings
+from graphitequery.node import BranchNode, LeafNode
+from graphitequery.readers import CeresReader
 
 from . import get_real_metric_path
 

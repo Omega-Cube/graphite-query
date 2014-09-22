@@ -14,7 +14,7 @@ limitations under the License."""
 
 from datetime import datetime,timedelta
 from time import daylight
-from graphite import settings
+from graphitequery import settings
 
 import pytz
 

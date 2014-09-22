@@ -33,8 +33,8 @@ except ImportError:
     from StringIO import StringIO
 
 from os import environ
-from graphite import settings
-from graphite.logger import log
+from graphitequery import settings
+from graphitequery.logger import log
 
 
 # There are a couple different json modules floating around out there with
@@ -111,7 +111,7 @@ if USING_CPICKLE:
         PICKLE_SAFE = {
           'copy_reg': set(['_reconstructor']),
           '__builtin__': set(['object']),
-          'graphite.intervals': set(['Interval', 'IntervalSet']),
+          'graphitequery.intervals': set(['Interval', 'IntervalSet']),
         }
 
         @classmethod
@@ -135,7 +135,7 @@ else:
         PICKLE_SAFE = {
           'copy_reg': set(['_reconstructor']),
           '__builtin__': set(['object']),
-          'graphite.intervals': set(['Interval', 'IntervalSet']),
+          'graphitequery.intervals': set(['Interval', 'IntervalSet']),
         }
 
         def find_class(self, module, name):

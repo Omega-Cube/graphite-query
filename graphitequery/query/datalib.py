@@ -14,10 +14,10 @@ limitations under the License."""
 
 import sys
 import time
-from graphite.logger import log
-import graphite.storage
-import graphite.readers
-from graphite import settings
+from graphitequery.logger import log
+import graphitequery.storage
+import graphitequery.readers
+from graphitequery import settings
 
 class TimeSeries(list):
   def __init__(self, name, start, end, step, values, consolidate='average'):
@@ -95,11 +95,11 @@ def fetchData(requestContext, pathExpr):
   endTime   = int( time.mktime( requestContext['endTime'].timetuple() ) )
 
   def _fetchData(pathExpr,startTime, endTime, requestContext, seriesList):
-    matching_nodes = graphite.storage.STORE.find(pathExpr, startTime, endTime)
+    matching_nodes = graphitequery.storage.STORE.find(pathExpr, startTime, endTime)
     fetches = [(node, node.fetch(startTime, endTime)) for node in matching_nodes if node.is_leaf]
 
     for node, results in fetches:
-      if isinstance(results, graphite.readers.FetchInProgress):
+      if isinstance(results, graphitequery.readers.FetchInProgress):
         results = results.waitForResults()
 
       if not results:

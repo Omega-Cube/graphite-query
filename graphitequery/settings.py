@@ -16,7 +16,7 @@ limitations under the License."""
 import os
 from os.path import abspath, dirname, join
 import logging
-from graphite.logger import NullHandler
+from graphitequery.logger import NullHandler
 log = logging.getLogger(__name__)
 log.addHandler(NullHandler())
 
@@ -69,7 +69,7 @@ MAX_FETCH_RETRIES = 2
 
 #Miscellaneous settings
 STORAGE_FINDERS = (
-    'graphite.finders.standard.StandardFinder',
+    'graphitequery.finders.standard.StandardFinder',
 )
 
 # If using rrdcached, set to the address or socket of the daemon

@@ -2,8 +2,8 @@ import copy
 from __setup import TestCase
 from mock import patch, call, MagicMock
 
-from graphite.query.datalib import TimeSeries
-from graphite.query import functions
+from graphitequery.query.datalib import TimeSeries
+from graphitequery.query import functions
 
 def return_greater(series, value):
     return [i for i in series if i is not None and i > value]

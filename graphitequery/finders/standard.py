@@ -1,11 +1,11 @@
 import os
 from os.path import isdir, isfile, join, basename
-from graphite import settings
+from graphitequery import settings
 
-from graphite.logger import log
-from graphite.node import BranchNode, LeafNode
-from graphite.readers import WhisperReader, GzippedWhisperReader, RRDReader
-from graphite.util import find_escaped_pattern_fields
+from graphitequery.logger import log
+from graphitequery.node import BranchNode, LeafNode
+from graphitequery.readers import WhisperReader, GzippedWhisperReader, RRDReader
+from graphitequery.util import find_escaped_pattern_fields
 
 from . import fs_to_metric, get_real_metric_path, match_entries
 

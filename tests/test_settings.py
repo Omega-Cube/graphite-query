@@ -8,7 +8,7 @@ def join(path):
 class TestLogger(TestCase):
 
     def test_setup_storage_variables(self):
-        from graphite import settings
+        from graphitequery import settings
         settings.setup_storage_variables(DATA_DIR)
         self.assertEqual(settings.INDEX_FILE, join("index"))
         if settings.CERES_DIR is not None:
@@ -18,7 +18,7 @@ class TestLogger(TestCase):
 
     def test_creating_directories(self):
         import os
-        from graphite import settings
+        from graphitequery import settings
 
         settings.CREATE_DIRECTORIES = False
 

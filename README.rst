@@ -27,7 +27,7 @@ Usage
 =====
 
 This package provides the functions ``query``, ``eval_qs`` and
-``get_all_leaf_nodes`` (all are part of the ``graphite.query``
+``get_all_leaf_nodes`` (all are part of the ``graphitequery.query``
 subpackage).
 
 ``query``
@@ -51,7 +51,7 @@ In short, its parameters (in positional order) are:
    http://graphite.readthedocs.org/en/latest/render_api.html#from-until
 -  ``tz``: optional, time zone to convert all times into. If this
    parameter is not specified, then
-   ``graphite.query.settings.TIME_ZONE`` is used (if any). Finally,
+   ``graphitequery.query.settings.TIME_ZONE`` is used (if any). Finally,
    system's timezone is used if ``TIME_ZONE`` is empty. see
    http://graphite.readthedocs.org/en/latest/render_api.html#tz
 
@@ -59,12 +59,12 @@ A basic query might look like this:
 
 ::
 
-        >>> from graphite.query import query
+        >>> from graphitequery.query import query
         >>> print list(query("graphite-web.compatible.path.expression")[0])
 
 The ``query`` function *always* (even if you supply only one target
 path) returns a ``list`` of instances of
-``graphite.query.datalib.TimeSeries``, which in turn is a ``list``-like
+``graphitequery.query.datalib.TimeSeries``, which in turn is a ``list``-like
 object whose sub-elements are the values stored by graphite (in a
 ``whisper`` database) at particular points in time.
 
@@ -78,7 +78,7 @@ dictionary that can be passed on to ``query`` and calls ``query``.E.g.:
 
 ::
 
-        >>> from graphite.query import query, eval_qs
+        >>> from graphitequery.query import query, eval_qs
         >>> print list(eval_qs("format=raw&target=*.*.*")[0])
         >>> # The above is the same as:
         >>> print list(query(**{"target": "*.*.*"}))
@@ -92,17 +92,17 @@ Returns a ``list`` of all leaf nodes/targets that are found in the
 Configuring ``graphite-query``
 ==============================
 
-The module ``graphite.settings`` can be used to set up some of the
+The module ``graphitequery.settings`` can be used to set up some of the
 "package-wide" parameters of ``graphite-query``. You can look into that
-module to see some of the supported settings. The ``graphite.query``
+module to see some of the supported settings. The ``graphitequery.query``
 subpackage directly imports this module, so one can do a
-``from graphite.query import settings`` for convenience.
+``from graphitequery.query import settings`` for convenience.
 
 Perhaps the most important parameter is ``STORAGE_DIR``, the directory
 that is used to look for data. By default, this directory is set to
 ``/opt/graphite/storage``, as this is the default directory used by
 ``graphite``. You could set this parameter manually, but it's better to
-use the provided ``graphite.settings.setup_storage_variables`` function,
+use the provided ``graphitequery.settings.setup_storage_variables`` function,
 as this will set some additional dependant parameters (such as the
 ``whisper`` storage directory etc.). Otherwise, one would have to set
 those parameters manually also.

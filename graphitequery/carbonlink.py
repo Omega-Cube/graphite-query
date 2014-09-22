@@ -5,10 +5,10 @@ import errno
 import random
 import sys
 from select import select
-from graphite import settings
-from graphite.query.hashing import ConsistentHashRing
-from graphite.logger import log
-from graphite.util import load_module, unpickle
+from graphitequery import settings
+from graphitequery.query.hashing import ConsistentHashRing
+from graphitequery.logger import log
+from graphitequery.util import load_module, unpickle
 
 try:
     import cPickle as pickle

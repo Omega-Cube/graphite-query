@@ -1,13 +1,13 @@
-""" This is a modified version of package render from graphite-web """
+""" This is a modified version of package render from graphitequery-web """
 import pytz
-from graphite import settings
-from graphite.settings import setup_storage_variables
-from graphite.query.evaluator import evaluateTarget
-from graphite.query.attime import parseATTime
+from graphitequery import settings
+from graphitequery.settings import setup_storage_variables
+from graphitequery.query.evaluator import evaluateTarget
+from graphitequery.query.attime import parseATTime
 import tzlocal
 
 def query(*args, **kwargs):
-    """ Returns a list of graphite.query.datalib.TimeSeries instances
+    """ Returns a list of graphitequery.query.datalib.TimeSeries instances
 
         `query` takes both positional and keyword arguments, which in turn are taken
         from [graphite-web's render API]
@@ -24,7 +24,7 @@ def query(*args, **kwargs):
          absolute time period to graph.
          see <http://graphite.readthedocs.org/en/latest/render_api.html#from-until>
         * `tz`: optional, time zone to convert all times into.
-         If this parameter is not specified, then `graphite.query.settings.TIME_ZONE`
+         If this parameter is not specified, then `graphitequery.query.settings.TIME_ZONE`
          is used (if any).  Finally, system's timezone is used if `TIME_ZONE` is empty.
          see <http://graphite.readthedocs.org/en/latest/render_api.html#tz>
     """
@@ -114,8 +114,8 @@ def eval_qs(query_string):
 def get_all_leaf_nodes():
     """Return a ``list`` of all leaf nodes/targets that are found in the
     ``settings.STORAGE_DIR``"""
-    from graphite.storage import get_finder, FindQuery
-    from graphite.node import LeafNode
+    from graphitequery.storage import get_finder, FindQuery
+    from graphitequery.node import LeafNode
 
     finders = [get_finder(finder_path)
                        for finder_path in settings.STORAGE_FINDERS]

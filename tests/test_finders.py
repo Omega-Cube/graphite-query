@@ -3,9 +3,9 @@ import time
 
 from __setup import TestCase
 
-from graphite.intervals import Interval, IntervalSet
-from graphite.node import LeafNode, BranchNode
-from graphite.storage import Store, get_finder
+from graphitequery.intervals import Interval, IntervalSet
+from graphitequery.node import LeafNode, BranchNode
+from graphitequery.storage import Store, get_finder
 
 
 class FinderTest(TestCase):
